@@ -221,5 +221,5 @@ modelsol = {
     'nShocks' : Model.params['nShocks']
 }
 
-with open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "w") as f:
+with open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "wb") as f:
     pickle.dump(modelsol,f)
