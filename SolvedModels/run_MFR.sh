@@ -21,9 +21,9 @@ for chiUnderline in 0.5 1.0
 do
     for a_e in 0.15
     do
-        for a_h in 0.13 0.10
+        for a_h in 0.13 0.10 0.5
         do
-            for gamma_e in 2.0 3.0
+            for gamma_e in 2.0 3.0 4.0
             do
                 for gamma_h in 8.0
                 do
