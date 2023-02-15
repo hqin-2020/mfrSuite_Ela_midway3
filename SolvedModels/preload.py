@@ -128,6 +128,7 @@ Model = m.Model(params)
 
 Model.solve()
 Model.computeStatDent()
+Model.dumpData()
 
 modelsol = {
     'muCe' : Model.muCe(),
@@ -161,11 +162,6 @@ modelsol = {
     'nShocks' : Model.params['nShocks']
 }
 
-### Step 3: Compute stationary density
-##------------------------------------------#
-
-##### This method can only be called after the model is solved.
-Model.computeStatDent()
 
 pcts = {'W':[.5],'Z':[.5],'V':[.25,.5,.75]}
 
@@ -274,16 +270,16 @@ bc = {'natural':True}
 dt = 1/12
 T = 1200
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCe, 'sigmaC':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
 expoElasExpertsC, priceElasExpertsC, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCe, 'sigmaC':sigmaCefn, 'muS':muNe, 'sigmaS':sigmaNefn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muNe, 'sigmaS':sigmaNefn, 'dt':dt, 'T':T}
 expoElasExpertsN, priceElasExpertsN, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCh, 'sigmaC':sigmaChfn, 'muS':muSh, 'sigmaS':sigmaShfn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muSh, 'sigmaS':sigmaShfn, 'dt':dt, 'T':T}
 expoElasHouseholdsC, priceElasHouseholdsC, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
-modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCh, 'sigmaC':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
+modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
 expoElasHouseholdsN, priceElasHouseholdsN, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 elasol = {'expoElasExpertsC':expoElasExpertsC,

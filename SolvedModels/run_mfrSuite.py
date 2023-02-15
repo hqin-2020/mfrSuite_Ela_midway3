@@ -133,6 +133,7 @@ Model.solve()
 Model.printInfo() ## This step is optional: it prints out information regarding time, number of iterations, etc.
 Model.printParams() ## This step is optional: it prints out the parameteres used.
 end = time.time()
+Model.computeStatDent()
 Model.dumpData()
 solve_time = '{:.4f}'.format((end - start)/60)
 MFR_time_info = {'solve_time': solve_time}
@@ -147,8 +148,6 @@ with open(os.getcwd()+"/" + folder_name + "/MFR_time_info.json", "w") as f:
 ##------------------------------------------#
 
 ##### This method can only be called after the model is solved.
-Model.computeStatDent()
-
 pcts = {'W':[.5],'Z':[.5],'V':[.25,.5,.75]}
 
 # 30 year time periods

@@ -17,9 +17,9 @@ elif (( $(echo "$sigma_V_norm == 0.0" |bc -l) )); then
     mkdir -p ./bash/$domain_folder
 fi
 
-for chiUnderline in 0.5 1.0
+for chiUnderline in 0.5
 do
-    for a_e in 0.15
+    for a_e in 0.14
     do
         for a_h in -1
         do
