@@ -126,7 +126,7 @@ params['preLoad']           = folder_name
 #### Now, create a Model
 Model = m.Model(params)
 
-model_ela_sol = pickle.load(open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "rb"))
+model_ela_sol = pickle.load(open(os.getcwd()+"/" + folder_name + "/model_ela_data.pkl", "rb"))
 os.makedirs(os.getcwd()+"/plots", exist_ok = True)
 plotdir = os.getcwd()+"/plots/" + folder_name
 
