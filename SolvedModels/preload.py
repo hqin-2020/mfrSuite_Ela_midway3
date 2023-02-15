@@ -296,5 +296,5 @@ elasol = {'expoElasExpertsC':expoElasExpertsC,
         'priceElasHouseholdsN':priceElasHouseholdsN}
 
 
-with open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "wb") as f:
+with open(os.getcwd()+"/" + folder_name + "/model_ela_data.pkl", "wb") as f:
     pickle.dump(elasol,f)

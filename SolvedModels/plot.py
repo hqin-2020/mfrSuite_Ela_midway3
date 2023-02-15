@@ -130,6 +130,7 @@ model_ela_sol = pickle.load(open(os.getcwd()+"/" + folder_name + "/model_ela_sol
 os.makedirs(os.getcwd()+"/plots", exist_ok = True)
 plotdir = os.getcwd()+"/plots/" + folder_name
 
+print(model_ela_sol.keys)
 expoElasExpertsC = model_ela_sol['expoElasExpertsC']
 priceElasExpertsC = model_ela_sol['priceElasExpertsC']
 expoElasExpertsN = model_ela_sol['expoElasExpertsN']
