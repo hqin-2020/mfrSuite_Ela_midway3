@@ -5,6 +5,7 @@ import time
 import os
 import json
 import pickle
+import itertools
 
 parser = argparse.ArgumentParser(description="parameter settings")
 parser.add_argument("--nV",type=int,default=30)
@@ -221,4 +222,4 @@ modelsol = {
 }
 
 with open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "w") as f:
-    json.dump(modelsol,f)
+    pickle.dump(modelsol,f)
