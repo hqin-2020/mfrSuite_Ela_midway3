@@ -239,9 +239,9 @@ modelsol = {
     'nShocks' : Model.params['nShocks']
 }
 
-with open(os.getcwd()+"/" + folder_name + "/model_ela_sol.pkl", "wb") as f:
-    pickle.dump(modelsol,f)
-    
+with open(os.getcwd()+'/' + folder_name + '/model_ela_sol.pkl', 'wb') as file:
+    pickle.dump(modelsol,file)
+
 muXs = [RegularGridInterpolator(modelsol['stateMatInput'], modelsol['muX'][:,n].reshape(modelsol['gridSizeList'], order = 'F')) for n in range(modelsol['nDims'])]
 muCe = RegularGridInterpolator(modelsol['stateMatInput'], modelsol['muCe'].reshape(modelsol['gridSizeList'], order = 'F'))
 muCh = RegularGridInterpolator(modelsol['stateMatInput'], modelsol['muCh'].reshape(modelsol['gridSizeList'], order = 'F'))
