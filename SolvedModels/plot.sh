@@ -41,8 +41,8 @@ do
 
 #SBATCH --account=pi-lhansen
 #SBATCH --job-name=run
-#SBATCH --output=./job-outs/$domain_folder/$model_folder/run.out
-#SBATCH --error=./job-outs/$domain_folder/$model_folder/run.err
+#SBATCH --output=./job-outs/$domain_folder/$model_folder/plot.out
+#SBATCH --error=./job-outs/$domain_folder/$model_folder/plot.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
