@@ -7,7 +7,7 @@ import json
 import pickle
 import itertools
 from scipy.interpolate import RegularGridInterpolator
-from SolvedModels.shockElas import computeElas
+from shockElas import computeElas
 
 parser = argparse.ArgumentParser(description="parameter settings")
 parser.add_argument("--nV",type=int,default=30)
