@@ -19,13 +19,13 @@ fi
 
 for chiUnderline in 0.5 1.0
 do
-    for a_e in 0.15
+    for a_e in 0.14
     do
-        for a_h in -99999999999999
+        for a_h in -1
         do
             for gamma_e in 4.0
             do
-                for gamma_h in 6.0
+                for gamma_h in 6.0 8.0
                 do
                     for psi_e in 1.0
                     do
