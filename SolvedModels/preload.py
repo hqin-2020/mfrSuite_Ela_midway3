@@ -271,25 +271,38 @@ dt = 1/12
 T = 1200
 
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
-expoElasExpertsC, priceElasExpertsC, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
+expoElasExpertsC, priceElasExpertsC, _, _, costElasExpertsC, phit1ExpertsC, phit2ExpertsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCe, 'sigmaG':sigmaCefn, 'muS':muNe, 'sigmaS':sigmaNefn, 'dt':dt, 'T':T}
-expoElasExpertsN, priceElasExpertsN, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
+expoElasExpertsN, priceElasExpertsN, _, _, costElasExpertsN, phit1ExpertsN, phit2ExpertsN = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muSh, 'sigmaS':sigmaShfn, 'dt':dt, 'T':T}
-expoElasHouseholdsC, priceElasHouseholdsC, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
+expoElasHouseholdsC, priceElasHouseholdsC, _, _, costElasHouseholdsC, phit1HouseholdsC, phit2HouseholdsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muG':muCh, 'sigmaG':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
-expoElasHouseholdsN, priceElasHouseholdsN, _, _ = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
+expoElasHouseholdsN, priceElasHouseholdsN, _, _, costElassHouseholdsN, phit1HouseholdsN, phit2HouseholdsN = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
 elasol = {'expoElasExpertsC':expoElasExpertsC,
         'priceElasExpertsC':priceElasExpertsC,
+        'costElasExpertsC':costElasExpertsC,
+        'phit1ExpertsC':phit1ExpertsC,
+        'phit2ExpertsC':phit2ExpertsC,
         'expoElasExpertsN':expoElasExpertsN,
         'priceElasExpertsN':priceElasExpertsN,
+        'costElasExpertsN':costElasExpertsN,
+        'phit1ExpertsN':phit1ExpertsN,
+        'phit2ExpertsN':phit2ExpertsN,
         'expoElasHouseholdsC':expoElasHouseholdsC,
         'priceElasHouseholdsC':priceElasHouseholdsC,
+        'costElasHouseholdsC':costElasHouseholdsC,
+        'phit1HouseholdsC':phit1HouseholdsC,
+        'phit2HouseholdsC':phit2HouseholdsC,
         'expoElasHouseholdsN':expoElasHouseholdsN,
-        'priceElasHouseholdsN':priceElasHouseholdsN}
+        'priceElasHouseholdsN':priceElasHouseholdsN,
+        'costElassHouseholdsN':costElassHouseholdsN,
+        'phit1HouseholdsN':phit1HouseholdsN,
+        'phit2HouseholdsN':phit2HouseholdsN,
+        }
 
 
 with open(os.getcwd()+"/" + folder_name + "/model_ela_data.pkl", "wb") as f:
