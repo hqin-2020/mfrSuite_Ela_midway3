@@ -23,9 +23,9 @@ do
     do
         for a_h in 0.1 0.05
         do
-            for gamma_e in 0.5
+            for gamma_e in 1.0
             do
-                for gamma_h in 8.0
+                for gamma_h in 3.0
                 do
                     for psi_e in 1.0
                     do
