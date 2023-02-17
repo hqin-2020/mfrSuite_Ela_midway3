@@ -40,7 +40,7 @@ do
 #! /bin/bash
 
 #SBATCH --account=pi-lhansen
-#SBATCH --job-name=prenew4d
+#SBATCH --job-name=prenew4dd
 #SBATCH --output=./job-outs/$domain_folder/$model_folder/prenew.out
 #SBATCH --error=./job-outs/$domain_folder/$model_folder/prenew.err
 #SBATCH --time=0-10:00:00
