@@ -40,14 +40,14 @@ do
 #! /bin/bash
 
 #SBATCH --account=pi-lhansen
-#SBATCH --job-name=prenew
+#SBATCH --job-name=prenew4d
 #SBATCH --output=./job-outs/$domain_folder/$model_folder/prenew.out
 #SBATCH --error=./job-outs/$domain_folder/$model_folder/prenew.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=14
-#SBATCH --mem-per-cpu=2000
+#SBATCH --mem-per-cpu=4000
 
 module load python/anaconda-2021.05
 
