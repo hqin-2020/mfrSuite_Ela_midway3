@@ -165,9 +165,6 @@ modelsol = {
 
 pcts = {'W':[.5],'Z':[.5],'V':[.25,.5,.75]}
 
-# 30 year time periods
-T = 360
-dt = 1
 
 # Natural boundatry conditions
 bc = {'natural':True}
