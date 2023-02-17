@@ -19,7 +19,7 @@ fi
 
 for chiUnderline in 0.5
 do
-    for a_e in 0.15
+    for a_e in 0.14 0.15
     do
         for a_h in -1.0
         do
@@ -35,14 +35,14 @@ do
                             mkdir -p ./job-outs/$domain_folder/$model_folder
                             mkdir -p ./bash/$domain_folder/$model_folder
 
-                            touch ./bash/$domain_folder/$model_folder/preorg.sh
-                            tee ./bash/$domain_folder/$model_folder/preorg.sh << EOF
+                            touch ./bash/$domain_folder/$model_folder/preorg14.sh
+                            tee ./bash/$domain_folder/$model_folder/preorg14.sh << EOF
 #! /bin/bash
 
 #SBATCH --account=pi-lhansen
-#SBATCH --job-name=preorg
-#SBATCH --output=./job-outs/$domain_folder/$model_folder/preorg.out
-#SBATCH --error=./job-outs/$domain_folder/$model_folder/preorg.err
+#SBATCH --job-name=preorg14
+#SBATCH --output=./job-outs/$domain_folder/$model_folder/preorg14.out
+#SBATCH --error=./job-outs/$domain_folder/$model_folder/preorg14.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
@@ -51,11 +51,11 @@ do
 
 module load python/anaconda-2021.05
 
-python3 /project/lhansen/mfrSuite_Ela_midway3/SolvedModels/preload_orgse_no_4d.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
+python3 /project/lhansen/mfrSuite_Ela_midway3/SolvedModels/preload_orgse.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
                                                     --nV ${nV} --nVtilde ${nVtilde} --V_bar ${V_bar} --Vtilde_bar ${Vtilde_bar} --sigma_V_norm ${sigma_V_norm} --sigma_Vtilde_norm ${sigma_Vtilde_norm} \
 
 EOF
-                            sbatch ./bash/$domain_folder/$model_folder/preorg.sh
+                            sbatch ./bash/$domain_folder/$model_folder/preorg14.sh
                         done
                     done
                 done

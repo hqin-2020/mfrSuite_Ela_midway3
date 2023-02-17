@@ -19,7 +19,7 @@ fi
 
 for chiUnderline in 0.5
 do
-    for a_e in 0.15
+    for a_e in 0.14
     do
         for a_h in -1.0
         do
@@ -35,14 +35,14 @@ do
                             mkdir -p ./job-outs/$domain_folder/$model_folder
                             mkdir -p ./bash/$domain_folder/$model_folder
 
-                            touch ./bash/$domain_folder/$model_folder/preorgn.sh
-                            tee ./bash/$domain_folder/$model_folder/preorgn.sh << EOF
+                            touch ./bash/$domain_folder/$model_folder/preorgn14.sh
+                            tee ./bash/$domain_folder/$model_folder/preorgn14.sh << EOF
 #! /bin/bash
 
 #SBATCH --account=pi-lhansen
-#SBATCH --job-name=preorgn
-#SBATCH --output=./job-outs/$domain_folder/$model_folder/preorgn.out
-#SBATCH --error=./job-outs/$domain_folder/$model_folder/preorgn.err
+#SBATCH --job-name=preorgn14
+#SBATCH --output=./job-outs/$domain_folder/$model_folder/preorgn14.out
+#SBATCH --error=./job-outs/$domain_folder/$model_folder/preorgn14.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
@@ -55,7 +55,7 @@ python3 /project/lhansen/mfrSuite_Ela_midway3/SolvedModels/preload_orgse_no_4d.p
                                                     --nV ${nV} --nVtilde ${nVtilde} --V_bar ${V_bar} --Vtilde_bar ${Vtilde_bar} --sigma_V_norm ${sigma_V_norm} --sigma_Vtilde_norm ${sigma_Vtilde_norm} \
 
 EOF
-                            sbatch ./bash/$domain_folder/$model_folder/preorgn.sh
+                            sbatch ./bash/$domain_folder/$model_folder/preorgn14.sh
                         done
                     done
                 done
