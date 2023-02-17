@@ -268,7 +268,7 @@ sigmaNefn = lambda x: np.transpose([vol(x) for vol in sigmaNe])
 sigmaNhfn = lambda x: np.transpose([vol(x) for vol in sigmaNh])
 
 bc = {'natural':True}
-dt = 1/12
+dt = 1
 T = 360
 
 print(2)
