@@ -116,7 +116,7 @@ a_e = str("{:0.3f}".format(params['a_e'])).replace('.', '', 1)
 a_h = str("{:0.3f}".format(params['a_h'])).replace('.', '', 1) 
 chiUnderline = str("{:0.3f}".format(params['chiUnderline'])).replace('.', '', 1) 
 
-folder_name = 'chiUnderline_' + chiUnderline + '_a_e_' + a_e + '_a_h_' + a_h  + '_gamma_e_' + gamma_e + '_gamma_h_' + gamma_h + '_psi_e_' + psi_e + '_psi_h_' + psi_h + '_rep'
+folder_name = 'chiUnderline_' + chiUnderline + '_a_e_' + a_e + '_a_h_' + a_h  + '_gamma_e_' + gamma_e + '_gamma_h_' + gamma_h + '_psi_e_' + psi_e + '_psi_h_' + psi_h + '_rep_m'
 
 params['folderName']        = folder_name
 params['preLoad']           = folder_name
@@ -200,7 +200,7 @@ for i in range(len(plot_elas)):
         axes[i].set_title('With respect to the ' + shock_name[i])
 axes[0].set_ylim([-1.5,0.5])
 axes[1].set_ylim([-0.005,0.1])
-axes[2].set_ylim([-0.01,0.01])
+axes[2].set_ylim([-0.01,0.5])
 fig.suptitle('Exposure elasticity for the Households Consumption')
 fig.tight_layout()
 fig.savefig(plotdir + '/expoElasHouseholdss_C_type1.png')
