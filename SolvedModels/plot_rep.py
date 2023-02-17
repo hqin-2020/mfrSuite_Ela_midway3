@@ -200,7 +200,7 @@ for i in range(len(plot_elas)):
         axes[i].set_title('With respect to the ' + shock_name[i])
 axes[0].set_ylim([-1.5,0.5])
 axes[1].set_ylim([-0.005,0.1])
-axes[2].set_ylim([-0.01,0.5])
+axes[2].set_ylim([-0.01,1.0])
 fig.suptitle('Exposure elasticity for the Households Consumption')
 fig.tight_layout()
 fig.savefig(plotdir + '/expoElasHouseholdss_C_type1.png')
