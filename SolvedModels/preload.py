@@ -120,7 +120,7 @@ chiUnderline = str("{:0.3f}".format(params['chiUnderline'])).replace('.', '', 1)
 
 folder_name = 'chiUnderline_' + chiUnderline + '_a_e_' + a_e + '_a_h_' + a_h  + '_gamma_e_' + gamma_e + '_gamma_h_' + gamma_h + '_psi_e_' + psi_e + '_psi_h_' + psi_h
 
-params['folderName']        = folder_name + '_noo_4d'
+params['folderName']        = folder_name + '_orgse'
 params['preLoad']           = folder_name
 
 #### Now, create a Model
@@ -234,6 +234,7 @@ modelsol = {
     'nDims' : Model.params['nDims'],
     'nShocks' : Model.params['nShocks']
 }
+print(1)
 
 with open(os.getcwd()+'/' + folder_name + '/model_ela_sol.pkl', 'wb') as file:
     pickle.dump(modelsol,file)
@@ -270,6 +271,7 @@ bc = {'natural':True}
 dt = 1/12
 T = 360
 
+print(2)
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCe, 'sigmaC':sigmaCefn, 'muS':muSe, 'sigmaS':sigmaSefn, 'dt':dt, 'T' :T}
 expoElasExpertsC, priceElasExpertsC, _, _, costElasExpertsC, phit1ExpertsC, phit2ExpertsC = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
@@ -282,6 +284,7 @@ expoElasHouseholdsC, priceElasHouseholdsC, _, _, costElasHouseholdsC, phit1House
 modelInput = {'muX':muXfn, 'sigmaX':sigmaXfn, 'muC':muCh, 'sigmaC':sigmaChfn, 'muS':muNh, 'sigmaS':sigmaNhfn, 'dt':dt, 'T':T}
 expoElasHouseholdsN, priceElasHouseholdsN, _, _, costElassHouseholdsN, phit1HouseholdsN, phit2HouseholdsN = computeElas(modelsol['stateMatInput'], modelInput, bc, modelsol['x0'])
 
+print(3)
 elasol = {'expoElasExpertsC':expoElasExpertsC,
         'priceElasExpertsC':priceElasExpertsC,
         'costElasExpertsC':costElasExpertsC,
