@@ -3,7 +3,7 @@
 nV=30
 nVtilde=0
 V_bar=1.0
-Vtilde_bar=0.0
+Vtilde_bar=1.0
 sigma_V_norm=0.132
 sigma_Vtilde_norm=0.0
 
@@ -21,7 +21,7 @@ for chiUnderline in 0.5
 do
     for a_e in 0.15
     do
-        for a_h in 0.13 0.10 0.05
+        for a_h in -1.0
         do
             for gamma_e in 2.0 3.0 4.0
             do
@@ -46,7 +46,7 @@ do
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=caslake
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=4
+#SBATCH --cpus-per-task=14
 #SBATCH --mem-per-cpu=2000
 
 module load python/anaconda-2021.05
